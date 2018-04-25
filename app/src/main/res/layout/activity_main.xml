@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".timeclock.TimeClockActivity">
+
+    <LinearLayout
+        android:id="@+id/time_clock_top_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/time_clock_top_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textAllCaps="true"
+            android:text="ABRIL"/>
+      <TextView
+          android:id="@+id/time_clock_top_year"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="13dp"
+          android:text="2018"/>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@android:color/holo_blue_light"/>
+
+        </LinearLayout>
+
+  <me.nlmartian.silkcal.DayPickerView
+      xmlns:calendar="http://schemas.android.com/apk/res-auto"
+      android:id="@+id/time_clock_calendar_view"
+      android:layout_width="match_parent"
+      android:layout_height="460dp"
+      android:background="@android:color/white"
+      android:layout_below="@+id/time_clock_top_calendar"
+      calendar:drawRoundRect="false"/>
+
+  <View
+      android:id="@+id/time_clock_separator_calendar"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="5dp"
+      android:layout_below="@+id/time_clock_calendar_view"
+      android:background="@android:color/black"/>
+
+  <RelativeLayout
+      android:id="@+id/time_clock_list_content"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@+id/time_clock_separator_calendar"
+      android:layout_marginTop="10dp"
+      android:background="@android:color/white">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/time_clock_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"/>
+
+
+  </RelativeLayout>
+
+  <android.support.design.widget.FloatingActionButton
+      android:id="@+id/time_clock_calendar_add"
+      android:layout_width="54dp"
+      android:layout_height="54dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_marginBottom="16dp"
+      android:layout_marginRight="16dp"
+      android:indeterminate="false"
+      app:borderWidth="0dp"
+      app:elevation="6dp"
+      android:src="@drawable/ic_add"
+      app:backgroundTint="@color/bright_sky_blue"/>
+
+
+</RelativeLayout>
